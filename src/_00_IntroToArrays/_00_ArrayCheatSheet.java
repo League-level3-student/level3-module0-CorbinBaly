@@ -1,33 +1,64 @@
 package _00_IntroToArrays;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class _00_ArrayCheatSheet {
 	public static void main(String[] args) {
-		//1. make an array of 5 Strings
 
-		//2. print the third element in the array
+		Random rand = new Random();
 
-		//3. set the third element to a different value
+		// 1. make an array of 5 Strings
+		String[] firstarray = new String[5];
 
-		//4. print the third element again
+		// 2. print the third element in the array
+		System.out.println(firstarray[3]);
+
+		// 3. set the third element to a different value
+		firstarray[3] = "hi";
+
+		// 4. print the third element again
+		System.out.println(firstarray[3]);
+
+		// 5. use a for loop to set all the elements in the array to a string of your
+		// choice
+		for (int i = 0; i < firstarray.length; i++) {
+			firstarray[i] = "I consume all. - Fanboy";
+		}
+		// 6. use a for loop to print all the values in the array
+		// BE SURE TO USE THE ARRAY'S length VARIABLE
+		for (int i = 0; i < firstarray.length; i++) {
+			System.out.println(firstarray[i]);
+		}
+		// 7. make an array of 50 integers
+		int moreints[] = new int[50];
+		// 8. use a for loop to make every value of the integer array a random number
+		for (int i = 0; i < moreints.length; i++) {
+			int finalrand = rand.nextInt(51);
+			moreints[i] = finalrand;
+		}
+		// 9. without printing the entire array, print only the smallest number on the
+		// array
+		int smallestnumber = 49;
+		int largestnumber = 0;
+		for (int i = 0; i < moreints.length; i++) {
+			
+			if (moreints[i] < smallestnumber) {
+				smallestnumber = moreints[i];
+			}
+			if (moreints[i] > largestnumber) {
+				largestnumber = moreints[i];
+			}
+		}
 		
-		//5. use a for loop to set all the elements in the array to a string of your choice
-		
-		//6. use a for loop to print all the values in the array
-		//   BE SURE TO USE THE ARRAY'S length VARIABLE
-		
-		//7. make an array of 50 integers
-
-		//8. use a for loop to make every value of the integer array a random number
-
-		//9. without printing the entire array, print only the smallest number on the array
-
-		//10 print the entire array to see if step 8 was correct
-
-		//11. print the largest number in the array.
-		
-		//12. print only the last element in the array
-		
+		// 10 print the entire array to see if step 8 was correct
+		for (int i = 0; i < moreints.length; i++) {
+			System.out.println(moreints[i]);
+		}
+		System.out.println("The Smallest Number is " + smallestnumber);
+		// 11. print the largest number in the array.
+		System.out.println("The Largest Number is " + largestnumber);
+		// 12. print only the last element in the array
+		System.out.println("The final one is" + moreints[moreints.length-1]);
 	}
 }
