@@ -1,5 +1,6 @@
 package _03_More_Array_Fun;
 
+import java.util.Iterator;
 import java.util.Random;
 
 public class MoreArrayFun {
@@ -8,12 +9,13 @@ public class MoreArrayFun {
 
 	// 1. Create a main method to test the other methods you write.
 	public static void main(String[] args) {
-		strings[1] = "Hi";
-		strings[2] = "Good to see you";
-		strings[3] = "Hello";
-		printStrings(strings);
-		reverseStrings(strings);
-		oddStrings(strings);
+		strings[0] = "Hi";
+		strings[1] = "Good to see you";
+		strings[2] = "Hello";
+		// printStrings(strings);
+		// reverseStrings(strings);
+		// oddStrings(strings);
+		randomString(strings);
 	}
 
 	// 2. Write a method that takes an array of Strings and prints all the Strings
@@ -28,7 +30,7 @@ public class MoreArrayFun {
 	// in the array
 	// in reverse order.
 	public static void reverseStrings(String[] strings) {
-		for (int i = strings.length - 1; i >= 0; i++) {
+		for (int i = strings.length - 1; i >= 0; i--) {
 			System.out.println(strings[i]);
 		}
 	}
@@ -48,11 +50,21 @@ public class MoreArrayFun {
 	// in a completely random order. Almost every run of the program should result
 	// in a different order.
 	public static void randomString(String[] strings) {
-	for (int i = 0; i < strings.length; i++) {
-		
-	}
-		int random = rand.nextInt(strings.length);
-	
-	}
+		boolean[] isprinted = new boolean[strings.length];
+		for (int j = 0; j < isprinted.length; j++) {
+			isprinted[j] = false;
+		}
 
+		
+	
+for (int i = 0; i < 10000; i++) {
+	int random = rand.nextInt(strings.length);
+
+			if (!isprinted[random]) {
+				System.out.println(strings[random]);
+				isprinted[random] = true;
+			}
+
+		}
+	}
 }
